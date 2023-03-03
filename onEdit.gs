@@ -4,7 +4,7 @@ function onEdit(event) {
   var editedRow = range.getRow();
   var lastColumn = sheet.getLastColumn();
   var editedRange = sheet.getRange(editedRow, 1, 1, lastColumn);
-  var allowedUsers = ['gilbertombj@gmail.com', 'atendimentojpe@gmail.com']; // Adicione os e-mails dos usuários permitidos aqui
+  var allowedUsers = ['mail@gmail.com', 'mail@gmail.com']; // Adicione os e-mails dos usuários permitidos aqui
   var flag = false;
   
   // Remove proteções existentes na linha
