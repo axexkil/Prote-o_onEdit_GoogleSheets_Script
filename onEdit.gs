@@ -5,7 +5,7 @@ function onEdit(event) {
   var lastColumn = sheet.getLastColumn();
   var editedRange = sheet.getRange(editedRow, 1, 1, lastColumn);
   var allowedUsers = ['mail@gmail.com', 'mail@gmail.com']; // Adicione os e-mails dos usuários permitidos aqui
-  var flag = false;
+  var flag = true;
   
   // Remove proteções existentes na linha
   var protections = sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -13,11 +13,11 @@ function onEdit(event) {
   for (var i = 0; i < protections.length; i++) {
     if (protections[i].getRange().getRow() == editedRow) {
       //Aciona a flag para não autorizar a adição da permissão pois ja existe regra para esta linha.
-      flag = true;
+      flag = false;
     }
   }
   
-  if(flag==false)
+  if(flag)
   {
     // Protege as células editadas pelo usuário atual
     var protection = editedRange.protect().setDescription('Protegido');
